@@ -3,9 +3,10 @@
 函数返回值为promise对象
 */ 
 import ajax from './ajax'
-const BASE_URL = 'http://localhost:4000'
+// const BASE_URL = 'http://localhost:4000'
+const BASE_URL = './api'
 // [1、根据经纬度获取位置详情](#1根据经纬度获取位置详情)<br/>
-export const reqAddress = (geohash)=>ajax(`${BASE_URL}/position${geohash}`)
+export const reqAddress = (geohash)=>ajax(`${BASE_URL}/position/${geohash}`)
 // [2、获取食品分类列表](#2获取食品分类列表)<br/>
 export const reqFoodCategorys  = ()=>ajax(`${BASE_URL}/index_category`)
 // [3、根据经纬度获取商铺列表](#3根据经纬度获取商铺列表)<br/>
@@ -24,4 +25,22 @@ export const reqSmsLogin  = (phone,code)=>ajax(`${BASE_URL}/login_sms`,{phone,co
 export const reqUserInfo  = ()=>ajax(`${BASE_URL}/userinfo`)
 // [10、用户登出](#10用户登出)<br/> 
 export const reqLogout  = ()=>ajax(`${BASE_URL}/logout`)
+
+/**
+ * 获取商家信息
+ */
+export const reqShopInfo = () => ajax('/info')
+
+/**
+ * 获取商家评价数组
+ */
+export const reqShopRatings = () => ajax('/ratings')
+
+/**
+ * 获取商家商品数组
+ */
+export const reqShopGoods = () => ajax('/goods')
+
+
+
 

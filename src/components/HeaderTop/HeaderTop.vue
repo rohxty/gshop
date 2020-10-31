@@ -2,15 +2,21 @@
 <div>
       <header class="header">
           <slot name="left"></slot>
-          <slot name="title"></slot>
+          <slot name="title">
+            <span class="header_title">
+            <span class="header_title_text ellipsis">{{title}}</span>
+          </span>
+          </slot>
         <slot name="right"></slot>
         </header>
 </div>
 </template>
 
 <script type="text/javascript">
-
 export default {
+ props: {
+   title:String
+ },
 }
 </script>
 
